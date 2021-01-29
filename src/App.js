@@ -1,38 +1,58 @@
 import React, { useState, useEffect } from "react";
 import {Route, Link, Switch } from 'react-router-dom'
+import axios from 'axios';
+import * as yup from 'yup';
 
 import FormHome from "./components/FormHome";
 
+
+const initalFormValues = {
+  size: '',
+sauce:'',
+instructions:'',
+
+sausage: false,
+peperoni: false,
+cheese: false,
+onions: false,
+mushrooms: false,
+}
+
+const initalFormErrors = {
+  size: '',
+  sauce:'',
+  instructions:'',
+  
+}
+
+const initalOrder = []
+const initalDisabled = true
+
+
+
 const App = () => {
+const [orders, setOrders] = useState(initalOrder)
+const [formValues, setFormValues] = useState(initalFormValues)
+const [formErrors, setFormErrors] = useState(initalFormErrors)
+const [disabled, setDisabled] = useState(initalDisabled)
+
+
   return (
 
     <div className='container'>
-    <header><h1>Friends App</h1></header>
+    <header><h1>Jonathan's Pizza Shack</h1></header>
 
     <FormHome
+    values={formValues}
+    errors={formErrors}
       
     />
       
-
-
-
-
-
-     {/* <div className="App">
-    <nav>
-      <h1 className="store-header">Pizza to go</h1>
-    <div className="nav-links">
-        <Link to="/">Home</Link>
-        <Link to="/order-pizza">Order here</Link>
-
-    </div>
-    </nav>
-
-    <Switch>
-      <Route path={"/components/FormHome"}>
-      
-      </Route>
-   </Switch>  */}
+      {
+        orders.map(order => {
+          return([])
+        })
+      }
 
    </div> 
   );

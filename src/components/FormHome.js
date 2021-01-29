@@ -3,7 +3,15 @@ import { useHistory } from 'react-router-dom';
 
 
 
-export default function FormHome() {
+export default function FormHome(props) {
+
+    const {
+        values,
+        submit,
+        change,
+        disabled,
+        errors,
+      } = props
 
     const history = useHistory();
 
@@ -25,6 +33,8 @@ export default function FormHome() {
            Place Order Here
         </button>
           </div>
+
+
     )
 
 }
